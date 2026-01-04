@@ -4,5 +4,5 @@
   <td>
     <%= pb_rails("button", props: { text: 'Delete', link: routine_path(routine), aria: { label: "Delete Routine" }, variant: 'danger', html_options: { 'data-method': 'delete' } }) %>
   </td>
-  <td><%= pb_rails("button", props: { text: "Workout", aria: { label: "Begin Workout" }, tag: "a", link: root_path, variant: 'secondary' }) %></td>
+  <td><%= pb_rails("button", props: { text: "Workout", aria: { label: "Begin Workout" }, tag: "a", link: workout_routine_path(routine), variant: 'secondary' }) %></td>
 </tr>

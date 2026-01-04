@@ -1,0 +1,15 @@
+<div class="workout">
+  <h2><%= @routine.name %> — <%= @day.titleize %> — Round <%= params[:step] || 1 %></h2>
+
+  <div class="exercise-card">
+    <h3><%= @current_exercise.exercise.name %></h3>
+    <p><strong>Sets:</strong> <%= @current_exercise.sets %></p>
+    <p><strong>Reps:</strong> <%= @current_exercise.reps %> <%= @current_exercise.rep_unit %></p>
+  </div>
+
+  <div class="workout-actions">
+    <%= link_to 'Cancel', routines_path, class: 'btn btn-secondary' %>
+
+    <%= link_to 'Next', workout_routine_path(@routine, @next_params), class: 'btn btn-primary' %>
+  </div>
+</div>
