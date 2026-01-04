@@ -1,0 +1,15 @@
+<%= pb_rails("table", props: { collapse: "sm" }) do %>
+  <thead>
+    <tr>
+      <th>Exercise Name</th>
+      <th>Day of Week</th>
+      <th>Sets</th>
+      <th>Reps</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% routine_exercises.each do |routine_exercise| %>
+      <%= render "exercises_table_row", routine_exercise: routine_exercise %>
+    <% end %>
+  </tbody>
+<% end %>
