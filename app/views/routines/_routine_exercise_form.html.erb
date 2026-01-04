@@ -1,37 +1,22 @@
-<%= form_with(model: @routine_exercise, url: routine_exercises_path, local: true) do |f| %>
-  <%= f.hidden_field :routine_id, value: @routine.id %>
+<%= pb_rails('card', props: { padding: 'sm' }) do %>
+  <%= pb_form_with(model: @routine_exercise, url: routine_exercises_path, local: true) do |form| %>
+    <%= form.hidden_field :routine_id, value: @routine.id %>
 
-  <div>
-    <%= f.label :exercise_id, "Exercise" %>
-    <%= f.collection_select :exercise_id, Exercise.all, :id, :name, prompt: 'Select exercise' %>
-  </div>
+    <%= form.collection_select :exercise_id, Exercise.all, :id, :name, props: { label: "Exercise" } %>
 
-  <div>
-    <%= f.label :day_of_week %>
-    <%= f.select :day_of_week, Date::DAYNAMES.each_with_index.map { |name, idx| [name, name.downcase] }, prompt: 'Select day' %>
-  </div>
+    <%= form.select :day_of_week, Date::DAYNAMES.each_with_index.map { |name, idx| [name, idx] }, props: { label: "Day of Week" } %>
 
-  <div>
-    <%= f.label :order %>
-    <%= f.number_field :order %>
-  </div>
+    <%= form.number_field :order, props: { label: "Order", placeholder: "Enter order" } %>
 
-  <div>
-    <%= f.label :sets %>
-    <%= f.number_field :sets %>
-  </div>
+    <%= form.number_field :sets, props: { label: "Sets", placeholder: "Enter sets" } %>
 
-  <div>
-    <%= f.label :reps %>
-    <%= f.number_field :reps %>
-  </div>
+    <%= pb_rails('form_group') do %>
+      <%= form.number_field :reps, props: { label: "Reps", placeholder: "Enter reps" } %>
+      <%= form.text_field :rep_unit, props: { label: "Rep Unit", placeholder: "Enter rep unit" } %>
+    <% end %>
 
-  <div>
-    <%= f.label :rep_unit %>
-    <%= f.text_field :rep_unit %>
-  </div>
-
-  <div>
-    <%= f.submit 'Add Exercise' %>
-  </div>
+    <%= form.actions do |action| %>
+      <%= action.submit %>
+    <% end %>
+  <% end %>
 <% end %>

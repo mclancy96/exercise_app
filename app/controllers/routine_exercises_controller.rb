@@ -73,6 +73,7 @@ class RoutineExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def routine_exercise_params
+    puts params
     params.expect(routine_exercise: %i[routine_id exercise_id day_of_week order sets reps rep_unit])
   end
 end

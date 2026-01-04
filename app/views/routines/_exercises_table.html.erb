@@ -1,15 +1,15 @@
 <%= pb_rails("table", props: { collapse: "sm" }) do %>
-  <thead>
-    <tr>
-      <th>Exercise Name</th>
-      <th>Day of Week</th>
-      <th>Sets</th>
-      <th>Reps</th>
-    </tr>
-  </thead>
-  <tbody>
+  <%= pb_rails("table/table_head") do %>
+    <%= pb_rails("table/table_row") do %>
+      <%= pb_rails("table/table_header", props: { text: "Exercise Name" }) %>
+      <%= pb_rails("table/table_header", props: { text: "Day of Week" }) %>
+      <%= pb_rails("table/table_header", props: { text: "Sets" }) %>
+      <%= pb_rails("table/table_header", props: { text: "Reps" }) %>
+    <% end %>
+  <% end %>
+  <%= pb_rails("table/table_body") do %>
     <% routine_exercises.each do |routine_exercise| %>
       <%= render "exercises_table_row", routine_exercise: routine_exercise %>
     <% end %>
-  </tbody>
+  <% end %>
 <% end %>

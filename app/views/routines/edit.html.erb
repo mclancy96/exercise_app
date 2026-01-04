@@ -1,12 +1,10 @@
 <% content_for :title, "Editing routine" %>
 
-<h1>Editing routine</h1>
+<%= pb_rails('title', props: {text: "Edit #{@routine.name}", tag: 'h1'}) %>
 
 <%= render "form", routine: @routine %>
 
-<br>
-
-<h2>Exercises</h2>
+<%= pb_rails('title', props: {text: "Exercises", tag: 'h2'}) %>
 <%= render "exercises_table", routine_exercises: @routine_exercises %>
 
 <h3>Add Exercise To Routine</h3>
