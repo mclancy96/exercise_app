@@ -1,3 +1,27 @@
 <%= pb_rails('flex', props: {justify: 'center'}) do %>
   <%= pb_rails('title', props: {text: 'Welcome', tag: "h1", size: '1' } )%>
 <% end %>
+
+<%= pb_rails('body') do %>
+  <ul>
+    <li>
+      <%= pb_rails("link", props: {
+        text: "Exercises",
+        href: exercises_path,
+      }) %>
+    </li>
+    <li>
+      <%= pb_rails("link", props: {
+        text: "Routines",
+        href: routines_path,
+      }) %>
+    </li>
+    <li>
+      <%= pb_rails("link", props: {
+        text: "Routine Exercises",
+        href: routine_exercises_path,
+      }) %>
+    </li>
+  </ul>
+
+<% end %>
