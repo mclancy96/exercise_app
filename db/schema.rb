@@ -38,7 +38,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_04_152539) do
 
   create_table "workouts", force: :cascade do |t|
     t.integer "routine_id", null: false
-    t.string "day_of_week"
+    t.integer "day_of_week", default: 0, null: false
     t.datetime "start_time"
     t.datetime "end_time"
     t.datetime "created_at", null: false
