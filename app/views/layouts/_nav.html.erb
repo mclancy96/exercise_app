@@ -1,0 +1,14 @@
+<%= pb_rails("card", props: { background: "dark", dark: true, margin_bottom: "sm" })  do %>
+  <%= pb_rails("body", props: {
+  text: "Dark",
+  dark: true
+}) %>
+  <%= pb_rails('flex', props: {justify: 'between'}) do %>
+    <%= pb_rails('flex/flex_item') do %>
+      <%= pb_rails('title', props: {text: 'Exercise'}) %>
+    <% end %>
+    <%= pb_rails('flex/flex_item') do %>
+      <%= pb_rails('title', props: {text: 'Exercise'}) %>
+    <% end %>
+  <% end %>
+<% end %>
