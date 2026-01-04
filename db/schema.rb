@@ -10,12 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_04_160120) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_04_170000) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
-    t.integer "sets"
-    t.integer "reps"
-    t.string "rep_unit"
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -28,6 +25,9 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_04_160120) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "order", default: 0, null: false
+    t.integer "sets"
+    t.integer "reps"
+    t.string "rep_unit"
     t.index ["exercise_id"], name: "index_routine_exercises_on_exercise_id"
     t.index ["routine_id"], name: "index_routine_exercises_on_routine_id"
   end

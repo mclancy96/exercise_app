@@ -69,6 +69,6 @@ class ExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def exercise_params
-    params.expect(exercise: %i[name sets reps rep_unit])
+    params.expect(exercise: %i[name])
   end
 end

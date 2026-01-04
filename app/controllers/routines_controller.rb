@@ -14,7 +14,10 @@ class RoutinesController < ApplicationController
   end
 
   # GET /routines/1/edit
-  def edit; end
+  def edit
+    @routine_exercises = @routine&.routine_exercises&.order(:order)
+    @routine_exercise = RoutineExercise.new(routine: @routine)
+  end
 
   # POST /routines or /routines.json
   def create

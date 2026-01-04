@@ -1,0 +1,37 @@
+<%= form_with(model: @routine_exercise, url: routine_exercises_path, local: true) do |f| %>
+  <%= f.hidden_field :routine_id, value: @routine.id %>
+
+  <div>
+    <%= f.label :exercise_id, "Exercise" %>
+    <%= f.collection_select :exercise_id, Exercise.all, :id, :name, prompt: 'Select exercise' %>
+  </div>
+
+  <div>
+    <%= f.label :day_of_week %>
+    <%= f.select :day_of_week, Date::DAYNAMES.each_with_index.map { |name, idx| [name, name.downcase] }, prompt: 'Select day' %>
+  </div>
+
+  <div>
+    <%= f.label :order %>
+    <%= f.number_field :order %>
+  </div>
+
+  <div>
+    <%= f.label :sets %>
+    <%= f.number_field :sets %>
+  </div>
+
+  <div>
+    <%= f.label :reps %>
+    <%= f.number_field :reps %>
+  </div>
+
+  <div>
+    <%= f.label :rep_unit %>
+    <%= f.text_field :rep_unit %>
+  </div>
+
+  <div>
+    <%= f.submit 'Add Exercise' %>
+  </div>
+<% end %>

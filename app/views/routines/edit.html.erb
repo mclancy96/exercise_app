@@ -6,6 +6,12 @@
 
 <br>
 
+<h2>Exercises</h2>
+<%= render "exercises_table", routine_exercises: @routine_exercises %>
+
+<h3>Add Exercise To Routine</h3>
+<%= render "routine_exercise_form" %>
+
 <div>
   <%= link_to "Show this routine", @routine %> |
   <%= link_to "Back to routines", routines_path %>

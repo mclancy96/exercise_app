@@ -24,7 +24,8 @@ class RoutineExercisesController < ApplicationController
     respond_to do |format|
       if @routine_exercise.save
         format.html do
-          redirect_to @routine_exercise, notice: "Routine exercise was successfully created."
+          redirect_to edit_routine_path(@routine_exercise.routine),
+                      notice: "Routine exercise was successfully created."
         end
         format.json { render :show, status: :created, location: @routine_exercise }
       else
@@ -72,6 +73,6 @@ class RoutineExercisesController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def routine_exercise_params
-    params.expect(routine_exercise: %i[routine_id exercise_id day_of_week])
+    params.expect(routine_exercise: %i[routine_id exercise_id day_of_week order sets reps rep_unit])
   end
 end
