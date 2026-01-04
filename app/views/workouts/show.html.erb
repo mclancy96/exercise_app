@@ -1,15 +1,22 @@
 <div class="workout">
-  <h2><%= @routine.name %> — <%= @day.titleize %> — Round <%= params[:step] || 1 %></h2>
+  <%= pb_rails('title', props: {tag: 'h2'}) do %>
+    <%= @routine.name %> — <%= @day.titleize %> — Round <%= params[:step] || 1 %>
+  <% end %>
 
-  <div class="exercise-card">
-    <h3><%= @current_exercise.exercise.name %></h3>
+  <%= pb_rails('card') do%>
+    <%= pb_rails('title', props: {tag: 'h3'}) do %>
+      <%= @current_exercise.exercise.name %>
+    <% end %>
+    <% if @current_exercise.exercise.url %>
+      <img src=<%= @current_exercise.exercise.url %> alt="" srcset="">
+    <% end %>
     <p><strong>Sets:</strong> <%= @current_exercise.sets %></p>
     <p><strong>Reps:</strong> <%= @current_exercise.reps %> <%= @current_exercise.rep_unit %></p>
-  </div>
+    <p><strong>Description:</strong> <%= @current_exercise.exercise.description %> </p>
+  <% end %>
 
   <div class="workout-actions">
-    <%= link_to 'Cancel', routines_path, class: 'btn btn-secondary' %>
-
-    <%= link_to 'Next', workout_routine_path(@routine, @next_params), class: 'btn btn-primary' %>
+    <%= pb_rails('button', props: {link: routines_path, text: 'Cancel', variant: 'danger'}) %>
+    <%= pb_rails('button', props: {link: workout_routine_path(@routine, @next_params), text: 'Next'}) %>
   </div>
 </div>
