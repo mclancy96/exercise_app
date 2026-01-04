@@ -1,7 +1,8 @@
-<div id="<%= dom_id routine %>">
-  <p>
-    <strong>Name:</strong>
-    <%= routine.name %>
-  </p>
-
-</div>
+<tr>
+  <td><%= routine.name %></td>
+  <td><%= pb_rails("button", props: { text: "Edit", aria: { label: "Edit Routine" }, tag: "a", link: edit_routine_path(routine), variant: 'secondary' }) %></td>
+  <td>
+    <%= pb_rails("button", props: { text: 'Delete', link: routine_path(routine), aria: { label: "Delete Routine" }, variant: 'danger', html_options: { 'data-method': 'delete' } }) %>
+  </td>
+  <td><%= pb_rails("button", props: { text: "Workout", aria: { label: "Begin Workout" }, tag: "a", link: root_path, variant: 'secondary' }) %></td>
+</tr>

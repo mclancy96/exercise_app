@@ -2,15 +2,27 @@
 
 <% content_for :title, "Routines" %>
 
-<h1>Routines</h1>
-
-<div id="routines">
-  <% @routines.each do |routine| %>
-    <%= render routine %>
-    <p>
-      <%= link_to "Show this routine", routine %>
-    </p>
+<%= pb_rails('flex', props: {justify: 'between'}) do %>
+  <%= pb_rails('flex/flex_item') do %>
+    <%= pb_rails('title', props: {tag: 'h1', text: 'Routines'}) %>
   <% end %>
-</div>
+  <%= pb_rails('flex/flex_item') do %>
+    <%= pb_rails("button", props: { text: "New Routine", aria: { label: "New Routine" }, tag: "a", link: new_routine_path }) %>
+  <% end %>
+<% end %>
 
-<%= link_to "New routine", new_routine_path %>
+<%= pb_rails("table", props: { collapse: "sm" }) do %>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Edit</th>
+      <th>Delete</th>
+      <th>Workout</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @routines.each do |routine| %>
+      <%= render routine %>
+    <% end %>
+  </tbody>
+<% end %>
