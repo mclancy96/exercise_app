@@ -1,0 +1,11 @@
+EnableDefaultLinters: true
+
+linters:
+  RequireInputAutocomplete:
+    enabled: false
+  NoJavascriptTagHelper:
+    enabled: false
+  AllowedScriptType:
+    enabled: false
+  Rubocop:
+    enabled: true

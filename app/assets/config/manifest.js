@@ -1,5 +1,7 @@
-// Manifest file that'll be compiled into application.js, application.css, and all non-JS/CSS
-// assets in the app/assets folder. Sprockets directives to link assets:
+//= link application.js
+//= link controllers/application.js
+//= link controllers/hello_controller.js
+//= link controllers/index.js
 //= link_tree ../images
-//= link_directory ../javascripts .js
+//= link playbook.css
 //= link_directory ../stylesheets .css

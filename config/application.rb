@@ -36,6 +36,9 @@ module ExerciseApp
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
 
+    # Add playbook gem assets to load path
+    config.assets.paths << Playbook::Engine.root.join("dist") if config.respond_to?(:assets)
+
     # Don't generate system test files.
     config.generators.system_tests = nil
   end
