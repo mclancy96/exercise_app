@@ -1,5 +1,6 @@
 source "https://rubygems.org"
 
+gem "erb_lint"
 gem "importmap-rails"
 gem "jbuilder"
 gem "playbook_ui"

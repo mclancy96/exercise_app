@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2026_01_04_170000) do
+ActiveRecord::Schema[8.0].define(version: 2026_01_04_171500) do
   create_table "exercises", force: :cascade do |t|
     t.string "name"
     t.string "description"
@@ -29,6 +29,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_04_170000) do
     t.integer "reps"
     t.string "rep_unit"
     t.index ["exercise_id"], name: "index_routine_exercises_on_exercise_id"
+    t.index ["routine_id", "exercise_id", "day_of_week"], name: "index_routine_ex_on_routine_exercise_day", unique: true
     t.index ["routine_id"], name: "index_routine_exercises_on_routine_id"
   end
 

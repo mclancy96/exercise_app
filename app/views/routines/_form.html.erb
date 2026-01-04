@@ -11,12 +11,12 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
-  </div>
+  <%= pb_rails("text_input", props: {
+    label: "Last Name",
+    placeholder: "Enter last name",
+    id: "name",
+    name: 'name'
+  }) %>
 
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= pb_rails('button', props: {type: 'submit', text: 'Submit Routine'}) %>
 <% end %>

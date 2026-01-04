@@ -1,4 +1,5 @@
 EnableDefaultLinters: true
+glob: "*html.erb"
 
 linters:
   RequireInputAutocomplete:
@@ -9,3 +10,7 @@ linters:
     enabled: false
   Rubocop:
     enabled: true
+    rubocop_config:
+      inherit_from:
+        - .rubocop.yml
+        - .erb_rubocop.yml
