@@ -1,12 +1,8 @@
 class Workout < ApplicationRecord
   belongs_to :routine
-  enum day_of_week: {
-    sunday: 0,
-    monday: 1,
-    tuesday: 2,
-    wednesday: 3,
-    thursday: 4,
-    friday: 5,
-    saturday: 6
-  }
+  DAY_OF_WEEK = %i[sunday monday tuesday wednesday thursday friday saturday].freeze
+
+  def day_of_week_name
+    DAY_OF_WEEK[day_of_week] if day_of_week
+  end
 end
