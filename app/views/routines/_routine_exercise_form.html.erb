@@ -2,9 +2,9 @@
   <%= pb_form_with(model: @routine_exercise, url: routine_exercises_path, local: true) do |form| %>
     <%= form.hidden_field :routine_id, value: @routine.id %>
 
-    <%= form.collection_select :exercise_id, Exercise.all, :id, :name, props: { label: "Exercise" } %>
+    <%= form.collection_select :exercise_id, Exercise.all, :id, :name, props: { label: "Exercise", blank_selection: 'Select an Exercise...' } %>
 
-    <%= form.select :day_of_week, Date::DAYNAMES.each_with_index.map { |name, idx| [name, idx] }, props: { label: "Day of Week" } %>
+    <%= form.select :day_of_week, Date::DAYNAMES.each.map { |name| [name, name.downcase] }, props: { label: "Day of Week", blank_selection: 'Select a Day of Week...' } %>
 
     <%= form.number_field :order, props: { label: "Order", placeholder: "Enter order" } %>
 
