@@ -22,7 +22,7 @@
   </thead>
   <tbody>
     <% @routines.each do |routine| %>
-      <%= render routine %>
+      <%= render "routine_row", routine: routine %>
     <% end %>
   </tbody>
 <% end %>

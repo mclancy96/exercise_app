@@ -16,6 +16,7 @@ ActiveRecord::Schema[8.0].define(version: 2026_01_04_152539) do
     t.integer "sets"
     t.integer "reps"
     t.string "rep_unit"
+    t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

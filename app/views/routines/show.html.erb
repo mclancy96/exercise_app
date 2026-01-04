@@ -1,6 +1,8 @@
 <p style="color: green"><%= notice %></p>
 
-<%= render @routine %>
+<%= pb_rails('title', props: {tag: 'h1', size: 1, text: @routine.name}) %>
+
+<%= render 'exercises_table', routine_exercises: @routine_exercises %>
 
 <div>
   <%= link_to "Edit this routine", edit_routine_path(@routine) %> |

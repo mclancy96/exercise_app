@@ -5,6 +5,7 @@ class CreateExercises < ActiveRecord::Migration[8.0]
       t.integer :sets
       t.integer :reps
       t.string :rep_unit
+      t.string :description
 
       t.timestamps
     end
