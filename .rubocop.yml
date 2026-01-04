@@ -38,3 +38,6 @@ Metrics/BlockLength:
 # Linting
 Lint/UselessAssignment:
   Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
