@@ -1,4 +1,4 @@
-<%= form_with(model: routine_exercise) do |form| %>
+<%= pb_form_with(model: routine_exercise) do |form| %>
   <% if routine_exercise.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(routine_exercise.errors.count, "error") %> prohibited this routine_exercise from being saved:</h2>
