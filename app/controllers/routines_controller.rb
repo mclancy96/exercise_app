@@ -15,7 +15,6 @@ class RoutinesController < ApplicationController
 
   # GET /routines/1/edit
   def edit
-    @routine_exercises = @routine&.routine_exercises&.order(:order)
     @routine_exercise = RoutineExercise.new(routine: @routine)
   end
 
@@ -66,7 +65,20 @@ class RoutinesController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_routine
     @routine = Routine.find(params.expect(:id))
-    @routine_exercises = @routine&.routine_exercises
+    weekday_order = <<~SQL.squish
+      CASE LOWER(day_of_week)
+        WHEN 'sunday' THEN 0
+        WHEN 'monday' THEN 1
+        WHEN 'tuesday' THEN 2
+        WHEN 'wednesday' THEN 3
+        WHEN 'thursday' THEN 4
+        WHEN 'friday' THEN 5
+        WHEN 'saturday' THEN 6
+        ELSE 7
+      END
+    SQL
+
+    @routine_exercises = @routine&.routine_exercises&.order(Arel.sql("(#{weekday_order})"), :order)
   end
 
   # Only allow a list of trusted parameters through.
