@@ -8,4 +8,10 @@
     <strong>Description:</strong>
     <%= exercise.description %>
   </p>
+
+  <% if exercise.url %>
+    <strong>Image:</strong>
+    <img src=<%= exercise.url %> width='350px'>
+    <p><%= exercise.url %></p>
+  <% end %>
 </div>
