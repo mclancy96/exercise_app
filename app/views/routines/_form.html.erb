@@ -1,4 +1,4 @@
-<%= pb_form_with(model: routine, url: routines_path, local: true) do |form| %>
+<%= pb_form_with(model: routine, local: true) do |form| %>
   <% if routine.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(routine.errors.count, "error") %> prohibited this routine from being saved:</h2>
@@ -12,5 +12,7 @@
   <% end %>
   <%= form.text_field :name, props: { label: true } %>
 
-  <%= pb_rails('button', props: {type: 'submit', text: 'Submit Routine'}) %>
+  <%= form.actions do |action| %>
+    <%= action.submit %>
+  <% end %>
 <% end %>

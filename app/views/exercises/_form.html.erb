@@ -1,4 +1,4 @@
-<%= pb_form_with(model: exercise, url: exercises_path, local: true) do |form| %>
+<%= pb_form_with(model: exercise, local: true) do |form| %>
   <% if exercise.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(exercise.errors.count, "error") %> prohibited this exercise from being saved:</h2>
@@ -13,5 +13,7 @@
   <%= form.text_field :name, props: { label: true } %>
   <%= form.text_field :description, props: { label: true } %>
   <%= form.text_field :url, props: { label: true } %>
-  <%= pb_rails('button', props: {type: 'submit', text: 'Submit'}) %>
+  <%= form.actions do |action| %>
+    <%= action.submit %>
+  <% end %>
 <% end %>
