@@ -16,6 +16,10 @@
   <% end %>
 
   <%= pb_rails("table/table_cell") do %>
+    <%= routine_exercise.reps %> <%= routine_exercise.order %>
+  <% end %>
+
+  <%= pb_rails("table/table_cell") do %>
     <%= link_to "Edit", edit_routine_exercise_path(routine_exercise) %>
   <% end %>
 
