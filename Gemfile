@@ -6,7 +6,7 @@ gem "jbuilder"
 gem "playbook_ui"
 gem "propshaft"
 gem "puma", ">= 5.0"
-gem "rails", "~> 8.0.0"
+gem "rails", "~> 8.1.2"
 gem "sassc-rails"
 
 group :production do
