@@ -1,24 +1,30 @@
-# README
+# Exercise App
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This app is now set up to run in Docker, including on a UGREEN NAS.
 
-Things you may want to cover:
+## Run with Docker Compose
 
-* Ruby version
+1. Install Docker and Docker Compose on the NAS.
+2. From the project root, build and start the app:
 
-* System dependencies
+   docker compose up --build -d
 
-* Configuration
+3. Open the app at http://<nas-ip>:3000.
+4. To stop it:
 
-* Database creation
+   docker compose down
 
-* Database initialization
+## Persistent data
 
-* How to run the test suite
+The container uses a Docker volume for the SQLite database and temporary files, so your data will persist across container restarts.
 
-* Services (job queues, cache servers, search engines, etc.)
+## Environment variables
 
-* Deployment instructions
+You can override defaults with:
 
-* ...
+- SECRET_KEY_BASE
+- DATABASE_PATH
+- CACHE_DATABASE_PATH
+- CABLE_DATABASE_PATH
+- RAILS_FORCE_SSL
+- RAILS_ASSUME_SSL

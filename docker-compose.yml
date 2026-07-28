@@ -1,0 +1,20 @@
+services:
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: ${SECRET_KEY_BASE:-changeme}
+      DATABASE_PATH: /rails/storage/production.sqlite3
+      CACHE_DATABASE_PATH: /rails/storage/production.sqlite3
+      CABLE_DATABASE_PATH: /rails/storage/production.sqlite3
+      RAILS_ASSUME_SSL: "false"
+      RAILS_FORCE_SSL: "false"
+      PORT: 3000
+    volumes:
+      - rails_storage:/rails/storage
+    restart: unless-stopped
+
+volumes:
+  rails_storage:

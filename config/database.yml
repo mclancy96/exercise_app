@@ -29,16 +29,22 @@ test:
 # ensure the database is located in a persisted volume.
 production:
   primary:
-    url: <%= ENV['DATABASE_URL'] %>
+    adapter: <%= ENV.fetch("DATABASE_ADAPTER", "sqlite3") %>
+    database: <%= ENV.fetch("DATABASE_PATH", "storage/production.sqlite3") %>
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
 
   cache:
-    url: <%= ENV['DATABASE_URL'] %>
+    adapter: <%= ENV.fetch("DATABASE_ADAPTER", "sqlite3") %>
+    database: <%= ENV.fetch("CACHE_DATABASE_PATH", ENV.fetch("DATABASE_PATH", "storage/production.sqlite3")) %>
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
     migrations_paths: db/cache_migrate
 
   # Some libraries (Action Cable wrappers, etc.) expect a `cable` database
   # connection for the production environment. Map `cable` to the primary DB.
   cable:
-    url: <%= ENV['DATABASE_URL'] %>
+    adapter: <%= ENV.fetch("DATABASE_ADAPTER", "sqlite3") %>
+    database: <%= ENV.fetch("CABLE_DATABASE_PATH", ENV.fetch("DATABASE_PATH", "storage/production.sqlite3")) %>
     pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    timeout: 5000
