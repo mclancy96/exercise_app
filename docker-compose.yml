@@ -1,6 +1,9 @@
 services:
   web:
-    build: .
+    build:
+      context: .
+      args:
+        SECRET_KEY_BASE: ${SECRET_KEY_BASE:-changeme}
     ports:
       - "3000:3000"
     environment:

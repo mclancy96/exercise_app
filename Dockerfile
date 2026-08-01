@@ -1,9 +1,12 @@
 FROM ruby:3.3.6-slim
 
+ARG SECRET_KEY_BASE=changeme
+
 ENV RAILS_ENV=production \
     BUNDLE_WITHOUT=development:test \
     BUNDLE_JOBS=4 \
-    BUNDLE_RETRY=3
+    BUNDLE_RETRY=3 \
+    SECRET_KEY_BASE=$SECRET_KEY_BASE
 
 WORKDIR /rails
 
