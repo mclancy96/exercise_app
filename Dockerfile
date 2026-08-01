@@ -3,7 +3,6 @@ FROM ruby:3.3.6-slim
 ARG SECRET_KEY_BASE=changeme
 
 ENV RAILS_ENV=production \
-    BUNDLE_WITHOUT=development:test \
     BUNDLE_JOBS=4 \
     BUNDLE_RETRY=3 \
     SECRET_KEY_BASE=$SECRET_KEY_BASE
@@ -19,7 +18,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 COPY Gemfile Gemfile.lock ./
-RUN bundle config set --local without 'development test' && bundle install
+RUN bundle install
 
 COPY . .
 
