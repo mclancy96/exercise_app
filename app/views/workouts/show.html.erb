@@ -7,6 +7,20 @@
     <%= pb_rails('title', props: {tag: 'h3'}) do %>
       <%= @current_exercise.exercise.name %><%= " #{@current_exercise.label}" if @current_exercise.label.present? %>
     <% end %>
+
+    <% if @current_exercise.rep_unit&.downcase == "seconds" %>
+      <div
+        class="workout-timer"
+        data-controller="workout-timer"
+        data-duration="<%= @current_exercise.reps %>"
+        data-countdown-start-url="<%= asset_path('countdown-start.wav') %>"
+        data-timer-done-url="<%= asset_path('timer-done.wav') %>"
+      >
+        <h2><strong>Timer:</strong> <span data-workout-timer-target="display">Ready to start</span></h2>
+        <%= pb_rails('button', props: {variant: "secondary", text: 'Start timer', type: "button", data: {workout_timer_target: "startButton", action: "click->workout-timer#startTimer"}}) %>
+      </div>
+    <% end %>
+
     <% if @current_exercise.exercise.url %>
       <img src=<%= @current_exercise.exercise.url %> alt="" srcset="">
     <% end %>
