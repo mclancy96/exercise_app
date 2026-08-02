@@ -1,0 +1,106 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE IF NOT EXISTS "exercises" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "description" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "url" varchar);
+INSERT INTO exercises VALUES(1,'Push Up','A bodyweight pressing movement','2026-08-01 15:09:51.320705','2026-08-01 15:09:51.320705',NULL);
+INSERT INTO exercises VALUES(2,'Kettlebell Goblet Squat','A bilateral lower-body compound movement','2026-08-01 15:09:51.329470','2026-08-02 11:52:21.270518','https://i.pinimg.com/originals/be/ff/97/beff9731a8a74d42711497a3533fdd13.gif');
+INSERT INTO exercises VALUES(3,'Plank','Isometric core hold','2026-08-01 15:09:51.332213','2026-08-02 11:53:27.820961','https://media.self.com/photos/57fea6654b7c91b2239d76eb/master/w_1600%2Cc_limit/FOREARM_PLANK_ROCKS.gif');
+INSERT INTO exercises VALUES(4,'Dumbbell Floor Press','','2026-08-02 11:54:31.030420','2026-08-02 11:54:31.030420','https://i.pinimg.com/originals/ea/04/01/ea04017687a4d06a987d3a2413f42287.gif');
+INSERT INTO exercises VALUES(5,'Dumbbell Seated Shoulder Press','','2026-08-02 11:55:42.060704','2026-08-02 11:55:42.060704','https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/11/Seated-dumbbell-shoulder-press.gif?fit=600%2C600&ssl=1');
+INSERT INTO exercises VALUES(6,'Dumbbell Single-Arm Tricep Extensions','','2026-08-02 11:57:02.878788','2026-08-02 11:57:02.878788','https://cdn.jefit.com/assets/img/exercises/gifs/230.gif');
+INSERT INTO exercises VALUES(7,'Glute Bridge','','2026-08-02 11:58:02.421731','2026-08-02 11:58:02.421731','https://media.giphy.com/media/krmA7YIhRvwjJYbmrG/giphy.gif');
+INSERT INTO exercises VALUES(8,'Downward-Facing Dog','','2026-08-02 11:59:13.637542','2026-08-02 11:59:13.637542','https://cdn.jefit.com/assets/img/exercises/gifs/510.gif');
+INSERT INTO exercises VALUES(9,'Low Lunge','','2026-08-02 12:00:51.574775','2026-08-02 12:00:51.574775','https://i.pinimg.com/originals/47/af/5d/47af5d802255c0761b901d2e7de11f7e.gif');
+INSERT INTO exercises VALUES(10,'Warrior II','','2026-08-02 13:01:18.848572','2026-08-02 13:01:18.848572','https://images.ctfassets.net/6ilvqec50fal/1sSTZZJo3KXrSCDqIhElXm/59dd3e773d2365c50f5c34589fbc16a0/warrior_2.gif');
+INSERT INTO exercises VALUES(11,'Cobra Pose','','2026-08-02 13:02:07.462825','2026-08-02 13:02:07.462825','https://media.post.rvohealth.io/wp-content/uploads/sites/2/2021/10/GRT-2.11.CobraPose.gif');
+INSERT INTO exercises VALUES(12,'Thread the Needle Pose','','2026-08-02 13:03:17.001824','2026-08-02 13:03:17.001824','https://downloads.ctfassets.net/6ilvqec50fal/6NfP0qbp51WbROkndFHfu/3d58087f9e3f8164c391fcf0b4e2b924/Thread_the_Needle_-_Dynamic.gif');
+INSERT INTO exercises VALUES(13,'Child''s Pose','','2026-08-02 13:04:28.704383','2026-08-02 13:04:28.704383','https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Kids/child$!27s+pose+slide+1.gif');
+INSERT INTO exercises VALUES(14,'Kettlebell Deadlift','','2026-08-02 13:05:31.960731','2026-08-02 13:05:31.960731','https://blog.myfitnesspal.com/wp-content/uploads/2020/02/Kettlebell-Deadlift.gif');
+INSERT INTO exercises VALUES(15,'Single-Arm Dumbbell Row','','2026-08-02 13:06:07.230978','2026-08-02 13:06:07.230978','https://legionathletics.com/wp-content/uploads/2021/04/Dumbbell-Row.gif');
+INSERT INTO exercises VALUES(16,'Dumbbell Bicep Curls','','2026-08-02 13:06:38.260739','2026-08-02 13:06:38.260739','https://www.strengthlog.com/wp-content/uploads/2020/02/Hantelcurl.gif');
+INSERT INTO exercises VALUES(17,'Dumbbell Standing Calf Raises','','2026-08-02 13:07:48.794501','2026-08-02 13:07:48.794501','https://cdn.shopify.com/s/files/1/0250/0362/2496/files/16664.gif?v=1644994751');
+INSERT INTO exercises VALUES(18,'Bird Dog','','2026-08-02 13:09:00.062351','2026-08-02 13:09:00.062351','https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMOei3ZaAtVxIhIs4H446iEJDtCR7qBbuNW9g1kez2Ag&s=10');
+INSERT INTO exercises VALUES(19,'Mountain Climbers','','2026-08-02 13:09:44.260560','2026-08-02 13:09:44.260560','https://media-cldnry.s-nbcnews.com/image/upload/rockcms/2025-04/mountain-climbers-cardio-exercise-te-250415-b119db.gif');
+INSERT INTO exercises VALUES(20,'Cat Cow Pose','','2026-08-02 13:11:00.735955','2026-08-02 13:11:00.735955','https://www.verywellfit.com/thmb/Jvwv8VPTLwd5gMATDAvuo8ief5M=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/Fitness_Gif-1500x1000-catcow-5c5c85cac9e77c0001566641.gif');
+INSERT INTO exercises VALUES(21,'Pigeon Pose','','2026-08-02 13:11:48.824140','2026-08-02 13:11:48.824140','https://media.post.rvohealth.io/wp-content/uploads/sites/2/2021/03/GRT-Pigeon-Pose.gif');
+INSERT INTO exercises VALUES(22,'Crescent Lunge Pose','','2026-08-02 13:14:12.304892','2026-08-02 13:14:12.304892','https://assets.myworkouts.io/exercises-media/d8N2v8T8F2N3a8NBw/crescent_pose_female_v24_gif_capon.gif');
+INSERT INTO exercises VALUES(23,'Sphinx Pose','','2026-08-02 13:15:04.593142','2026-08-02 13:15:04.593142','https://i0.wp.com/post.medicalnewstoday.com/wp-content/uploads/sites/3/2020/04/400x400_Sphinx_Pose.gif?w=315&h=840');
+INSERT INTO exercises VALUES(24,'Seated Spinal Twist Pose','','2026-08-02 13:16:06.851912','2026-08-02 13:16:06.851912','https://images.ctfassets.net/6ilvqec50fal/1IqRqKUZM7mYRpmTXxdWGE/e9c47c756eff7529c7b147d8aabee703/Seated_Yoga_Twist_GIF.gif');
+INSERT INTO exercises VALUES(25,'Supine Figure-Four Stretch Pose','','2026-08-02 13:16:45.978605','2026-08-02 13:16:45.978605','https://media-cldnry.s-nbcnews.com/image/upload/newscms/2021_29/1751659/figurefour.gif');
+INSERT INTO exercises VALUES(26,'Dumbbell Reverse Lunge','','2026-08-02 13:17:31.396731','2026-08-02 13:17:31.396731','https://i.pinimg.com/originals/97/67/a0/9767a03c6757dd67263bf38766379f3d.gif');
+INSERT INTO exercises VALUES(27,'Dumbbell Lateral Raise','','2026-08-02 13:18:01.703186','2026-08-02 13:18:01.703186','https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/12/Dumbbell-Lateral-Raise.gif?fit=600%2C600&ssl=1');
+INSERT INTO exercises VALUES(28,'Dumbbell Hammer Curl','','2026-08-02 13:18:28.316419','2026-08-02 13:18:28.316419','https://i0.wp.com/www.strengthlog.com/wp-content/uploads/2020/02/Hammer-curl.gif?fit=600%2C600&ssl=1');
+INSERT INTO exercises VALUES(29,'Kettlebell Suitcase Carry','Stand up tall with your shoulders back and down. Keep the kettlebell close to your body, avoiding any leaning to the side. Begin to walk slowly and steadily while holding the kettlebell in one hand. Take short, controlled steps, ensuring that your core remains engaged and your posture stays upright. Walk for a predetermined distance or time, depending on your fitness level and goals.','2026-08-02 13:21:17.174697','2026-08-02 13:21:17.174697','https://hips.hearstapps.com/hmg-prod/images/workouts/2016/03/suitcasecarry-1457044898.gif?crop=1xw:1xh;center,top&resize=640:*');
+INSERT INTO exercises VALUES(30,'Doorway Row','','2026-08-02 13:23:03.814562','2026-08-02 13:23:03.814562','https://i.pinimg.com/originals/a6/1c/61/a61c61956b6e77dbda692c40ab367a51.gif');
+CREATE TABLE IF NOT EXISTS "routines" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
+INSERT INTO routines VALUES(1,'Full Body','2026-08-01 15:09:51.350096','2026-08-01 15:09:51.350096');
+INSERT INTO routines VALUES(2,'Strength Split','2026-08-01 15:09:51.357681','2026-08-01 15:09:51.357681');
+INSERT INTO routines VALUES(3,'Everyday','2026-08-02 13:24:56.701498','2026-08-02 13:24:56.701498');
+CREATE TABLE IF NOT EXISTS "routine_exercises" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "routine_id" integer NOT NULL, "exercise_id" integer NOT NULL, "day_of_week" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "order" integer DEFAULT 0 NOT NULL, "sets" integer, "reps" integer, "rep_unit" varchar, "per_side" boolean DEFAULT 0 NOT NULL, CONSTRAINT "fk_rails_86f0b0200b"
+FOREIGN KEY ("exercise_id")
+  REFERENCES "exercises" ("id")
+, CONSTRAINT "fk_rails_8d726adbee"
+FOREIGN KEY ("routine_id")
+  REFERENCES "routines" ("id")
+);
+INSERT INTO routine_exercises VALUES(1,1,1,'monday','2026-08-01 15:09:51.387142','2026-08-01 15:09:51.387142',1,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(2,1,2,'monday','2026-08-01 15:09:51.393310','2026-08-01 15:09:51.393310',2,4,8,'reps',0);
+INSERT INTO routine_exercises VALUES(3,1,3,'wednesday','2026-08-01 15:09:51.397434','2026-08-01 15:09:51.397434',1,3,60,'seconds',0);
+INSERT INTO routine_exercises VALUES(4,3,2,'monday','2026-08-02 13:26:04.300193','2026-08-02 13:26:04.300193',1,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(5,3,4,'monday','2026-08-02 13:27:14.911888','2026-08-02 13:27:14.911888',2,3,10,'reps',0);
+INSERT INTO routine_exercises VALUES(6,3,5,'monday','2026-08-02 13:27:37.454771','2026-08-02 13:27:37.454771',3,3,10,'reps',0);
+INSERT INTO routine_exercises VALUES(8,3,7,'monday','2026-08-02 13:29:02.903922','2026-08-02 13:29:02.903922',5,3,20,'reps',0);
+INSERT INTO routine_exercises VALUES(9,3,3,'monday','2026-08-02 13:29:35.174809','2026-08-02 13:29:35.174809',6,3,30,'seconds',0);
+INSERT INTO routine_exercises VALUES(10,3,8,'tuesday','2026-08-02 13:30:55.522829','2026-08-02 13:30:55.522829',1,3,30,'seconds',0);
+INSERT INTO routine_exercises VALUES(13,3,6,'monday','2026-08-02 17:33:54.657194','2026-08-02 17:33:54.657194',4,3,12,'reps',1);
+INSERT INTO routine_exercises VALUES(14,3,9,'tuesday','2026-08-02 17:34:37.816105','2026-08-02 17:34:37.816105',2,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(15,3,10,'tuesday','2026-08-02 17:35:30.888145','2026-08-02 17:35:30.888145',3,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(16,3,11,'tuesday','2026-08-02 17:35:56.856021','2026-08-02 17:35:56.856021',4,3,20,'seconds',0);
+INSERT INTO routine_exercises VALUES(17,3,12,'tuesday','2026-08-02 17:36:31.168964','2026-08-02 17:36:31.168964',5,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(18,3,13,'tuesday','2026-08-02 17:36:55.937171','2026-08-02 17:36:55.937171',6,2,45,'seconds',0);
+INSERT INTO routine_exercises VALUES(19,3,14,'wednesday','2026-08-02 17:40:01.532123','2026-08-02 17:40:01.532123',1,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(20,3,15,'wednesday','2026-08-02 17:40:26.407080','2026-08-02 17:40:26.407080',2,3,10,'reps',1);
+INSERT INTO routine_exercises VALUES(21,3,16,'wednesday','2026-08-02 17:40:56.959805','2026-08-02 17:40:56.959805',3,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(22,3,18,'wednesday','2026-08-02 17:41:34.192855','2026-08-02 17:41:34.192855',5,3,10,'reps',1);
+INSERT INTO routine_exercises VALUES(23,3,17,'wednesday','2026-08-02 17:42:18.596397','2026-08-02 17:42:18.596397',4,3,15,'reps',0);
+INSERT INTO routine_exercises VALUES(24,3,19,'wednesday','2026-08-02 17:42:44.292888','2026-08-02 17:42:44.292888',6,3,30,'seconds',0);
+INSERT INTO routine_exercises VALUES(25,3,20,'thursday','2026-08-02 17:43:17.209030','2026-08-02 17:43:17.209030',1,3,10,'cycles',0);
+INSERT INTO routine_exercises VALUES(26,3,21,'thursday','2026-08-02 17:43:41.058778','2026-08-02 17:43:41.058778',2,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(27,3,22,'thursday','2026-08-02 17:44:58.367285','2026-08-02 17:44:58.367285',3,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(28,3,23,'thursday','2026-08-02 17:45:22.460137','2026-08-02 17:45:22.460137',4,3,30,'seconds',0);
+INSERT INTO routine_exercises VALUES(29,3,24,'thursday','2026-08-02 17:45:51.343923','2026-08-02 17:45:51.343923',5,3,30,'seconds',1);
+INSERT INTO routine_exercises VALUES(30,3,25,'thursday','2026-08-02 17:46:13.864023','2026-08-02 17:46:13.864023',6,2,45,'seconds',1);
+INSERT INTO routine_exercises VALUES(31,3,26,'friday','2026-08-02 17:46:47.186707','2026-08-02 17:46:47.186707',1,3,10,'reps',1);
+INSERT INTO routine_exercises VALUES(32,3,27,'friday','2026-08-02 17:47:19.679824','2026-08-02 17:47:19.679824',2,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(33,3,28,'friday','2026-08-02 17:49:43.131454','2026-08-02 17:49:43.131454',3,3,12,'reps',0);
+INSERT INTO routine_exercises VALUES(34,3,29,'friday','2026-08-02 17:50:10.448595','2026-08-02 17:50:10.448595',4,3,40,'steps',0);
+INSERT INTO routine_exercises VALUES(35,3,1,'friday','2026-08-02 17:50:37.702096','2026-08-02 17:50:37.702096',5,3,100,'reps',0);
+INSERT INTO routine_exercises VALUES(36,3,30,'friday','2026-08-02 17:50:56.733687','2026-08-02 17:50:56.733687',6,3,10,'reps',0);
+CREATE TABLE IF NOT EXISTS "workouts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "routine_id" integer NOT NULL, "day_of_week" integer DEFAULT 0 NOT NULL, "start_time" datetime(6), "end_time" datetime(6), "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_c10c041ead"
+FOREIGN KEY ("routine_id")
+  REFERENCES "routines" ("id")
+);
+INSERT INTO workouts VALUES(1,1,1,'2026-08-01 07:00:00','2026-08-01 08:00:00','2026-08-01 15:09:51.416424','2026-08-01 15:09:51.416424');
+INSERT INTO workouts VALUES(2,2,3,'2026-08-01 18:00:00','2026-08-01 19:00:00','2026-08-01 15:09:51.425283','2026-08-01 15:09:51.425283');
+CREATE TABLE IF NOT EXISTS "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY);
+INSERT INTO schema_migrations VALUES('20260104225226');
+INSERT INTO schema_migrations VALUES('20260104171500');
+INSERT INTO schema_migrations VALUES('20260104170000');
+INSERT INTO schema_migrations VALUES('20260104160120');
+INSERT INTO schema_migrations VALUES('20260104152539');
+INSERT INTO schema_migrations VALUES('20260104042218');
+INSERT INTO schema_migrations VALUES('20260104041956');
+INSERT INTO schema_migrations VALUES('20260104041324');
+INSERT INTO schema_migrations VALUES('20260802133844');
+CREATE TABLE IF NOT EXISTS "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL);
+INSERT INTO ar_internal_metadata VALUES('environment','production','2026-08-01 15:09:51.254040','2026-08-01 15:09:51.254042');
+INSERT INTO ar_internal_metadata VALUES('schema_sha1','381f202f0b58e77829d1f98ac4bd25d7972b2f39','2026-08-01 15:09:51.258332','2026-08-01 15:09:51.258334');
+DELETE FROM sqlite_sequence;
+INSERT INTO sqlite_sequence VALUES('routine_exercises',36);
+INSERT INTO sqlite_sequence VALUES('workouts',2);
+INSERT INTO sqlite_sequence VALUES('exercises',30);
+INSERT INTO sqlite_sequence VALUES('routines',3);
+CREATE INDEX "index_routine_exercises_on_exercise_id" ON "routine_exercises" ("exercise_id");
+CREATE UNIQUE INDEX "index_routine_ex_on_routine_exercise_day" ON "routine_exercises" ("routine_id", "exercise_id", "day_of_week");
+CREATE INDEX "index_routine_exercises_on_routine_id" ON "routine_exercises" ("routine_id");
+CREATE INDEX "index_workouts_on_routine_id" ON "workouts" ("routine_id");
+COMMIT;
