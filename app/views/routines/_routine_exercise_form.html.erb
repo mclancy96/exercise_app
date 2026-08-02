@@ -15,6 +15,15 @@
       <%= form.text_field :rep_unit, props: { label: "Rep Unit", placeholder: "Enter rep unit" } %>
     <% end %>
 
+    <%= form.check_box :per_side,
+      data: { field1: "value1", field2: "value2" },
+      props: { text: "Per Side?", label: true },
+      checked_value: "1",
+      unchecked_value: "0",
+      id: "per_side",
+      name: "routine_exercise[per_side]"
+    %>
+
     <%= form.actions do |action| %>
       <%= action.submit %>
     <% end %>

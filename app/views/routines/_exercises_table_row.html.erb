@@ -12,7 +12,9 @@
   <% end %>
 
   <%= pb_rails("table/table_cell") do %>
-    <%= routine_exercise.reps %> <%= routine_exercise.rep_unit %>
+    <%= routine_exercise.reps %>
+    <%= routine_exercise.rep_unit %>
+    <%= routine_exercise.per_side ? "/side" : "" %>
   <% end %>
 
   <%= pb_rails("table/table_cell") do %>

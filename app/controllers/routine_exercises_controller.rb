@@ -53,7 +53,21 @@ class RoutineExercisesController < ApplicationController
   end
 
   def routine_exercise_params
-    puts params
-    params.expect(routine_exercise: %i[routine_id exercise_id day_of_week order sets reps rep_unit])
+    permitted = params.require(:routine_exercise).permit(
+      :routine_id, :exercise_id, :day_of_week, :order, :sets, :reps, :rep_unit, :per_side
+    )
+
+    if params.dig(:routine_exercise, :per_side).present?
+      permitted[:per_side] = normalize_per_side_value(params[:routine_exercise][:per_side])
+    end
+
+    permitted
+  end
+
+  def normalize_per_side_value(value)
+    values = Array(value).reject(&:blank?)
+    return false if values.empty?
+
+    ActiveModel::Type::Boolean.new.cast(values.last)
   end
 end
