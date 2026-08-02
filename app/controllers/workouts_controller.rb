@@ -1,3 +1,5 @@
+require "ostruct"
+
 class WorkoutsController < ApplicationController
   before_action :set_routine
 
@@ -47,7 +49,27 @@ class WorkoutsController < ApplicationController
   end
 
   def current_round_exercises_for_step(routine_exercises, step)
-    routine_exercises.select { |re| re.sets.present? && re.sets >= step }
+    routine_exercises.filter_map do |routine_exercise|
+      next unless routine_exercise.sets.present? && routine_exercise.sets >= step
+
+      if routine_exercise.per_side
+        [build_workout_entry(routine_exercise, "(Right)"),
+         build_workout_entry(routine_exercise, "(Left)")]
+      else
+        build_workout_entry(routine_exercise)
+      end
+    end.flatten
+  end
+
+  def build_workout_entry(routine_exercise, label = nil)
+    OpenStruct.new(
+      routine_exercise: routine_exercise,
+      exercise: routine_exercise.exercise,
+      sets: routine_exercise.sets,
+      reps: routine_exercise.reps,
+      rep_unit: routine_exercise.rep_unit,
+      label: label
+    )
   end
 
   def redirect_workout_complete
